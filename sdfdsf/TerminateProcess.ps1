@@ -1,3 +1,0 @@
-# Exit Script Process
-
-exit
