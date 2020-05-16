@@ -2,6 +2,8 @@
 # Author: WillTee
 # Lightweight Windows 10 Pro Setup Script
 
+Disable-UAC
+
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
 $helperUri = $Boxstarter['ScriptToCall']
@@ -21,8 +23,8 @@ function executeScript {
 
 #--- Setting up Windows ---
 executeScript "ChangeExecutionPolicy.ps1";
-#executeScript "RemoveDefaultApps.ps1";
-#executeScript "InstallApps.ps1";
+executeScript "RemoveDefaultApps.ps1";
+executeScript "InstallApps.ps1";
 #executeScript "SystemConfiguration.ps1";
 #executeScript "FileExplorerSettings.ps1";
 #executeScript "CommonDevTools.ps1";
