@@ -1,8 +1,6 @@
 # Description: Boxstarter Script
-# Author: Microsoft
-# Common dev settings for desktop app development
-
-Disable-UAC
+# Author: WillTee
+# Lightweight Windows 10 Pro Setup Script
 
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
@@ -27,13 +25,9 @@ executeScript "RemoveDefaultApps.ps1";
 executeScript "InstallApps.ps1";
 executeScript "SystemConfiguration.ps1";
 executeScript "FileExplorerSettings.ps1";
-
 #executeScript "CommonDevTools.ps1";
 
 #--- reenabling critial items ---
-Enable-UAC
-Enable-MicrosoftUpdate
-
 
 #--- Terminate Script Process ---
 executeScript "TerminateProcess.ps1";
