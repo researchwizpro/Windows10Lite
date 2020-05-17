@@ -61,22 +61,30 @@ function executeScript {
 	iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
 }
 
+refreshEnv
+
 #--- Setting up Windows ---#
 executeScript "TurnOffWindowsHello.ps1"
-#executeScript "AutoLogon.ps1"
+# executeScript "AutoLogon.ps1"
 executeScript "RemoveDefaultApps.ps1";
-# executeScript "InstallChocolatey.ps1";
 executeScript "InstallApps.ps1";
 executeScript "RemovePinnedTaskbar.ps1";
-#executeScript "RemovePinnedStartMenu.ps1";
-#executeScript "SystemConfiguration.ps1";
-#executeScript "FileExplorerSettings.ps1";
-#executeScript "CommonDevTools.ps1";
+# executeScript "InstallChocolatey.ps1";
+# executeScript "RemovePinnedStartMenu.ps1";
+# executeScript "SystemConfiguration.ps1";
+# executeScript "FileExplorerSettings.ps1";
+# executeScript "CommonDevTools.ps1";
 
 #--- reenabling critial items ---
-Set-ExecutionPolicy AllSigned
 
 refreshEnv
 
+executeScript "ChangeExecutionPolicy.ps1";
+
+refreshEnv
+
+Restart-Computer
+
+exit
 
 ### END ###
