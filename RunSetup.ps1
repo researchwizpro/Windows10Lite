@@ -10,6 +10,9 @@ $ConfirmPreference = "None"
 # New-ItemProperty -Path HKLM:Software\Microsoft\Windows\CurrentVersion\policies\system -Name EnableLUA -PropertyType DWord -Value 0 -Force
 ###
 
+# Close Edge
+Stop-Process -Name "edge"
+
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
 $helperUri = $Boxstarter['ScriptToCall']
@@ -32,7 +35,7 @@ executeScript "TurnOffWindowsHello.ps1"
 executeScript "RemoveDefaultApps.ps1";
 executeScript "InstallChocolatey.ps1";
 executeScript "InstallApps.ps1";
-# executeScript "RemovePinnedStartMenu.ps1";
+executeScript "RemovePinnedStartMenu.ps1";
 executeScript "RemovePinnedTaskbar.ps1";
 #executeScript "SystemConfiguration.ps1";
 #executeScript "FileExplorerSettings.ps1";
