@@ -1,7 +1,7 @@
 # Removes All Apps That Are Pre Packaged With Windows 10 Pro (except MS Store)
 
 
-get-appxpackage *onedrive* | remove-appxpackage
+get-appxpackage *Onedrive* | remove-appxpackage
 
 RefreshEnv
 
