@@ -74,6 +74,7 @@ executeScript "RemovePinnedTaskbar.ps1";
 #executeScript "CommonDevTools.ps1";
 
 #--- reenabling critial items ---
+Set-ExecutionPolicy AllSigned
 
 refreshEnv
 
