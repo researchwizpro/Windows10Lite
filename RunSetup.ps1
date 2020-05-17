@@ -67,5 +67,7 @@ executeScript "RemovePinnedTaskbar.ps1";
 
 #--- reenabling critial items ---
 
+refreshEnv
+
 
 ### END ###
