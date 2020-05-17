@@ -46,4 +46,4 @@ executeScript "RemovePinnedTaskbar.ps1";
 
 
 #--- Terminate Script Process ---
-executeScript "TerminateProcess.ps1";
+# executeScript "TerminateProcess.ps1";
