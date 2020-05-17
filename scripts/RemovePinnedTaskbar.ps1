@@ -25,6 +25,6 @@ Pin-App "Microsoft Edge" -unpin
 ### TESTING ###
 
 # Pin
-Pin-App "Settings" 
+Pin-App "Settings" -pin
 
 ### TESTING ###
