@@ -20,5 +20,9 @@ Write-Error "Error Pinning/Unpinning App! (App-Name correct?)"
 
 Pin-App "Microsoft Store" -unpin
 Pin-App "Microsoft Edge" -unpin
-Pin-App "Cortana" -unpin
 
+### TESTING ###
+
+Pin-App "Microsoft Cortana" -unpin
+
+### TESTING ###

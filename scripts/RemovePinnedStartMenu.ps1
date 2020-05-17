@@ -25,7 +25,7 @@ Write-Error "Error Pinning/Unpinning App! (App-Name correct?)"
 Pin-App "Microsoft.MicrosoftStore" -unpin
 Pin-App "MicrosoftStore" -unpin
 Pin-App "Microsoft.MicrosoftEdge" -unpin
-Pin-App "MicrosoftEdge" -unpin
+Pin-App "Microsoft Edge" -unpin
 #Pin-App "get office" -unpin
 
 ### TESTING ###
