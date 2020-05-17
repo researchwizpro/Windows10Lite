@@ -37,11 +37,7 @@ $ConfirmPreference = "None"
 # Close Edge Browswer
 Stop-Process -Name "Microsoftedge"
 
-# Installs Chocolatey
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-# Installs AutoLogon
-choco install autologon
 
 # Get the base URI path from the ScriptToCall value
 #$bstrappackage = "-bootstrapPackage"
@@ -53,6 +49,12 @@ $helperUri = $helperUri.TrimEnd("'", " ")
 $helperUri = $helperUri.Substring(0, $helperUri.LastIndexOf("/"))
 $helperUri += "/scripts"
 write-host "helper script base URI is $helperUri"
+
+# Installs Chocolatey
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+# Installs AutoLogon
+choco install autologon
 
 function executeScript {
     Param ([string]$script)
