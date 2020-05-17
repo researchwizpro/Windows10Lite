@@ -44,6 +44,4 @@ executeScript "RemovePinnedTaskbar.ps1";
 #--- reenabling critial items ---
 
 
-
-#--- Terminate Script Process ---
-# executeScript "TerminateProcess.ps1";
+### END ###
