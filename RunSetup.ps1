@@ -25,7 +25,7 @@ function executeScript {
 }
 
 #--- Setting up Windows ---
-executeScript "ChangeExecutionPolicy.ps1";
+#executeScript "ChangeExecutionPolicy.ps1";
 executeScript "RemoveDefaultApps.ps1";
 executeScript "InstallChocolatey.ps1";
 executeScript "InstallApps.ps1";
