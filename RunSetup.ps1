@@ -11,7 +11,7 @@ $ConfirmPreference = "None"
 ###
 
 # Close Edge
-Stop-Process -Name "edge"
+Stop-Process -Name "Microsoftedge"
 
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
