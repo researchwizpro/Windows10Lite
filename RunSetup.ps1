@@ -35,6 +35,7 @@ executeScript "TurnOffWindowsHello.ps1"
 executeScript "RemoveDefaultApps.ps1";
 executeScript "InstallChocolatey.ps1";
 executeScript "InstallApps.ps1";
+executeScript "Set-AutoLogon.ps1";
 #executeScript "RemovePinnedStartMenu.ps1";
 executeScript "RemovePinnedTaskbar.ps1";
 #executeScript "SystemConfiguration.ps1";
