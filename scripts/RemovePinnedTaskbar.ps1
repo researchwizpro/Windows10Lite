@@ -23,6 +23,6 @@ Pin-App "Microsoft Edge" -unpin
 
 ### TESTING ###
 
-Pin-App "Microsoft Cortana" -unpin
+#Pin-App "Microsoft Cortana" -unpin
 
 ### TESTING ###

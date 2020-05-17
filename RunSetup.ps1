@@ -10,7 +10,7 @@ $ConfirmPreference = "None"
 # New-ItemProperty -Path HKLM:Software\Microsoft\Windows\CurrentVersion\policies\system -Name EnableLUA -PropertyType DWord -Value 0 -Force
 ###
 
-# Close Edge
+# Close Edge Browswer
 Stop-Process -Name "Microsoftedge"
 
 # Get the base URI path from the ScriptToCall value
