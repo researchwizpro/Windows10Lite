@@ -2,13 +2,37 @@
 # Author: WillTee
 # Lightweight Windows 10 Pro Setup Script
 
-Disable-UAC
+### MAIN SCRIPT FILE ###
+
+### Starting with fresh image of Windows 10 Pro ###
+
+
+# Disable-UAC
+#   UiPath Robot
+
+# Enable AutoLogon
+#   UiPath Robot
+
+# Open Microsoftedge
+#   UiPath Robot
+
+# Click in URL bar
+#   UiPath Robot
+
+# Paste URL
+#   UiPath Robot
+
+# Hit Enter key
+#   UiPath Robot
+
+# Click Open
+#   UiPath Robot
+
+# Click Run
+#   UiPath Robot
+
 #ensure installing powershell modules don't prompt on needed dependencies
 $ConfirmPreference = "None"
-
-###
-# New-ItemProperty -Path HKLM:Software\Microsoft\Windows\CurrentVersion\policies\system -Name EnableLUA -PropertyType DWord -Value 0 -Force
-###
 
 # Close Edge Browswer
 Stop-Process -Name "Microsoftedge"
@@ -35,9 +59,8 @@ executeScript "TurnOffWindowsHello.ps1"
 executeScript "RemoveDefaultApps.ps1";
 executeScript "InstallChocolatey.ps1";
 executeScript "InstallApps.ps1";
-executeScript "Set-AutoLogon.ps1";
+executeScript "RemovePinnedTaskbar.ps1";
 #executeScript "RemovePinnedStartMenu.ps1";
-#executeScript "RemovePinnedTaskbar.ps1";
 #executeScript "SystemConfiguration.ps1";
 #executeScript "FileExplorerSettings.ps1";
 #executeScript "CommonDevTools.ps1";
