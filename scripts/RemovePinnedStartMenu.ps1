@@ -18,8 +18,8 @@ Write-Error "Error Pinning/Unpinning App! (App-Name correct?)"
 }
 }
 
-Pin-App "Productivity" -unpin
-Pin-App "Store" -unpin
+# Pin-App "Productivity" -unpin
+Pin-App "Microsoft Store" -unpin
 Pin-App "Microsoft Edge" -unpin
-Pin-App "get office" -unpin
+#Pin-App "get office" -unpin
 
