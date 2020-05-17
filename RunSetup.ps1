@@ -38,15 +38,14 @@ $ConfirmPreference = "None"
 Stop-Process -Name "Microsoftedge"
 
 # Installs Chocolatey
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Unrestricted -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 # Installs AutoLogon
 choco install autologon
 
-
 # Get the base URI path from the ScriptToCall value
-$bstrappackage = "-bootstrapPackage"
-$helperUri = $Boxstarter['ScriptToCall']
+#$bstrappackage = "-bootstrapPackage"
+#$helperUri = $Boxstarter['ScriptToCall']
 $strpos = $helperUri.IndexOf($bstrappackage)
 $helperUri = $helperUri.Substring($strpos + $bstrappackage.Length)
 $helperUri = $helperUri.TrimStart("'", " ")
@@ -61,25 +60,17 @@ function executeScript {
 	iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
 }
 
-refreshEnv
-
 #--- Setting up Windows ---#
 executeScript "TurnOffWindowsHello.ps1"
-# executeScript "AutoLogon.ps1"
+#executeScript "AutoLogon.ps1"
 executeScript "RemoveDefaultApps.ps1";
 executeScript "InstallApps.ps1";
-executeScript "RemovePinnedTaskbar.ps1";
-# executeScript "InstallChocolatey.ps1";
-# executeScript "RemovePinnedStartMenu.ps1";
-# executeScript "SystemConfiguration.ps1";
-# executeScript "FileExplorerSettings.ps1";
-# executeScript "CommonDevTools.ps1";
+#executeScript "RemovePinnedStartMenu.ps1";
+#executeScript "SystemConfiguration.ps1";
+#executeScript "FileExplorerSettings.ps1";
+#executeScript "CommonDevTools.ps1";
 
 #--- reenabling critial items ---
-
-refreshEnv
-
-executeScript "ChangeExecutionPolicy.ps1";
 
 refreshEnv
 
