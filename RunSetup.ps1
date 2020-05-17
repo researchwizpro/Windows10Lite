@@ -37,6 +37,13 @@ $ConfirmPreference = "None"
 # Close Edge Browswer
 Stop-Process -Name "Microsoftedge"
 
+# Installs Chocolatey
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+# Installs AutoLogon
+choco install autologon
+
+
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
 $helperUri = $Boxstarter['ScriptToCall']
@@ -56,8 +63,9 @@ function executeScript {
 
 #--- Setting up Windows ---#
 executeScript "TurnOffWindowsHello.ps1"
+#executeScript "AutoLogon.ps1"
 executeScript "RemoveDefaultApps.ps1";
-executeScript "InstallChocolatey.ps1";
+# executeScript "InstallChocolatey.ps1";
 executeScript "InstallApps.ps1";
 executeScript "RemovePinnedTaskbar.ps1";
 #executeScript "RemovePinnedStartMenu.ps1";
