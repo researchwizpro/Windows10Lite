@@ -1,9 +1,7 @@
 # Description: Boxstarter Script
 # Author: WillTee
 # Lightweight Windows 10 Pro Setup Script
-Invoke-Item "C:\Users\WillTerfansky\Downloads/Set-AutoLogon.ps1"
 
-Start-Process -FilePath "Set-AutoLogon.ps1"
 #Disable-UAC
 #ensure installing powershell modules don't prompt on needed dependencies
 $ConfirmPreference = "None"
