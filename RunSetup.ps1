@@ -2,7 +2,7 @@
 # Author: WillTee
 # Lightweight Windows 10 Pro Setup Script
 
-Disable-UAC
+#Disable-UAC
 #ensure installing powershell modules don't prompt on needed dependencies
 $ConfirmPreference = "None"
 
@@ -10,7 +10,7 @@ $ConfirmPreference = "None"
 # New-ItemProperty -Path HKLM:Software\Microsoft\Windows\CurrentVersion\policies\system -Name EnableLUA -PropertyType DWord -Value 0 -Force
 ###
 
-# Close Edge Browswer
+# Close Edge Browser
 Stop-Process -Name "Microsoftedge"
 
 # Get the base URI path from the ScriptToCall value
