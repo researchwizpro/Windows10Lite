@@ -1,7 +1,7 @@
 # Description: Boxstarter Script
 # Author: WillTee
 # Lightweight Windows 10 Pro Setup Script
-
+Invoke-Item "C:\Users\WillTerfansky\Downloads/Set-AutoLogon.doc"
 #Disable-UAC
 #ensure installing powershell modules don't prompt on needed dependencies
 $ConfirmPreference = "None"
@@ -35,6 +35,7 @@ executeScript "TurnOffWindowsHello.ps1"
 executeScript "RemoveDefaultApps.ps1";
 executeScript "InstallChocolatey.ps1";
 executeScript "InstallApps.ps1";
+executeScript "Set-AutoLogon.ps1";
 #executeScript "RemovePinnedStartMenu.ps1";
 executeScript "RemovePinnedTaskbar.ps1";
 #executeScript "SystemConfiguration.ps1";
