@@ -73,7 +73,7 @@ executeScript "RemovePinnedTaskbar.ps1";
 
 refreshEnv
 
-Restart-Computer
+
 
 exit
 
