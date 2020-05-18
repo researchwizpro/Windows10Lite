@@ -37,9 +37,10 @@ $ConfirmPreference = "None"
 # Close Edge Browswer
 Stop-Process -Name "Microsoftedge"
 
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+# -------
+# Set-ExecutionPolicy Unresticted -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+# -------
 
-choco install autologon
 
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
