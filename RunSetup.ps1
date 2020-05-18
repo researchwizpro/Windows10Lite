@@ -67,10 +67,10 @@ function executeScript {
 }
 
 # Execute Scripts From Windows10Lite/scripts
-executeScript "TurnOffWindowsHello.ps1"
-executeScript "RemoveDefaultApps.ps1";
+#executeScript "TurnOffWindowsHello.ps1"
+#executeScript "RemoveDefaultApps.ps1";
 executeScript "InstallApps.ps1";
-executeScript "RemovePinnedTaskbar.ps1";
+#executeScript "RemovePinnedTaskbar.ps1";
 
 #executeScript "RemovePinnedStartMenu.ps1";
 #executeScript "SystemConfiguration.ps1";
