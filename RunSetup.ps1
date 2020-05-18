@@ -70,6 +70,13 @@ function executeScript {
 executeScript "TurnOffWindowsHello.ps1"
 executeScript "RemoveDefaultApps.ps1";
 executeScript "InstallApps.ps1";
+
+# Refresh Powershell and Registry Keys
+refreshEnv
+
+# Restart PC
+Invoke-Reboot
+
 executeScript "RemovePinnedTaskbar.ps1";
 #executeScript "RemovePinnedStartMenu.ps1";
 #executeScript "SystemConfiguration.ps1";
