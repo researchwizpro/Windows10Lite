@@ -85,5 +85,4 @@ refreshEnv
 # Restart PC
 Invoke-Restart
 
-Exit-PSSession
 ### END ###
