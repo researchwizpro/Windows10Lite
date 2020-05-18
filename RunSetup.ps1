@@ -34,8 +34,12 @@
 # ensure installing powershell modules don't prompt on needed dependencies
 $ConfirmPreference = "None"
 
+
+# *** NEED TO TEST IF NEEDED *** #
 # Temporarily Bypass Execution Policy
 Set-ExecutionPolicy Bypass -Scope Process -Force
+# *** NEED TO TEST IF NEEDED *** #
+
 
 # Close Edge Browswer
 Stop-Process -Name "Microsoftedge"
@@ -49,18 +53,20 @@ $helperUri = $helperUri.TrimStart("'", " ")
 $helperUri = $helperUri.TrimEnd("'", " ")
 $helperUri = $helperUri.Substring(0, $helperUri.LastIndexOf("/"))
 $helperUri += "/scripts"
-write-host "helper script base URI is $helperUri"
+write-host "Helper Script Base URI: $helperUri"
 
-# ------------------------------ #
+# ---------------------------------------------------------------------------
 
-## 
+#--- Scripts ---#
+
+# Script Excecution Function
 function executeScript {
     Param ([string]$script)
-    write-host "executing $helperUri/$script ..."
+    write-host "Executing $helperUri/$script ..."
 	iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
 }
 
-#--- Setting up Windows ---#
+# Execute Scripts From Windows10Lite/scripts
 executeScript "TurnOffWindowsHello.ps1"
 executeScript "RemoveDefaultApps.ps1";
 executeScript "InstallApps.ps1";
@@ -70,9 +76,14 @@ executeScript "RemovePinnedTaskbar.ps1";
 #executeScript "FileExplorerSettings.ps1";
 #executeScript "CommonDevTools.ps1";
 
-#--- reenabling critial items ---
+### Reenabling Critical Items
 
+
+# Refresh Powershell and Registry Keys
 refreshEnv
 
+# Restart PC
+Invoke-Restart
 
+Exit-PSSession
 ### END ###
