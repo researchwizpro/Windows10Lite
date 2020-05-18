@@ -83,6 +83,6 @@ executeScript "RemovePinnedTaskbar.ps1";
 refreshEnv
 
 # Restart PC
-Invoke-Restart
+Invoke-Reboot
 
 ### END ###
