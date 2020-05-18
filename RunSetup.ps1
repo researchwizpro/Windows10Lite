@@ -37,7 +37,6 @@ $ConfirmPreference = "None"
 
 # *** NEED TO TEST IF NEEDED *** #
 # Temporarily Bypass Execution Policy
-Set-ExecutionPolicy Bypass -Scope Process -Force
 # *** NEED TO TEST IF NEEDED *** #
 
 
@@ -72,16 +71,18 @@ function executeScript {
 executeScript "InstallApps.ps1";
 #executeScript "RemovePinnedTaskbar.ps1";
 
-#executeScript "RemovePinnedStartMenu.ps1";
-#executeScript "SystemConfiguration.ps1";
-#executeScript "FileExplorerSettings.ps1";
-#executeScript "CommonDevTools.ps1";
+# executeScript "RemovePinnedStartMenu.ps1";
+# executeScript "SystemConfiguration.ps1";
+# executeScript "FileExplorerSettings.ps1";
+# executeScript "CommonDevTools.ps1";
+
+executeScript "Reboot.ps1"
 
 ### Reenabling Critical Items
 
 
 # Refresh Powershell and Registry Keys
-refreshEnv
+# refreshEnv
 
 
 
