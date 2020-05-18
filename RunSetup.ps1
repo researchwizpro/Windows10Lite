@@ -82,4 +82,7 @@ executeScript "RemovePinnedTaskbar.ps1";
 # Refresh Powershell and Registry Keys
 refreshEnv
 
+# Restart PC
+Invoke-Reboot
+
 ### END ###
