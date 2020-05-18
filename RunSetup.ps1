@@ -31,18 +31,16 @@
 # Click Run
 #   UiPath Robot
 
-#ensure installing powershell modules don't prompt on needed dependencies
+# ensure installing powershell modules don't prompt on needed dependencies
 $ConfirmPreference = "None"
+
+# Temporarily Bypass Execution Policy
+Set-ExecutionPolicy Bypass -Scope Process -Force
 
 # Close Edge Browswer
 Stop-Process -Name "Microsoftedge"
 
-# -------
-# Set-ExecutionPolicy Unresticted -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-# -------
-
-
-# Get the base URI path from the ScriptToCall value
+# Get Base URI Path From ScriptToCall Value
 $bstrappackage = "-bootstrapPackage"
 $helperUri = $Boxstarter['ScriptToCall']
 $strpos = $helperUri.IndexOf($bstrappackage)
@@ -53,7 +51,9 @@ $helperUri = $helperUri.Substring(0, $helperUri.LastIndexOf("/"))
 $helperUri += "/scripts"
 write-host "helper script base URI is $helperUri"
 
+# ------------------------------ #
 
+## 
 function executeScript {
     Param ([string]$script)
     write-host "executing $helperUri/$script ..."
