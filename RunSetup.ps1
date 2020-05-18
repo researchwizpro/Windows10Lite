@@ -65,7 +65,7 @@ function executeScript {
 	iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
 }
 
-# Execute Scripts From Windows10Lite/scripts
+# Execute Scripts from Windows10Lite/scripts
 executeScript "TurnOffWindowsHello.ps1"
 #executeScript "RemoveDefaultApps.ps1";
 executeScript "InstallApps.ps1";
@@ -76,7 +76,6 @@ executeScript "InstallApps.ps1";
 # executeScript "FileExplorerSettings.ps1";
 # executeScript "CommonDevTools.ps1";
 
-executeScript "Reboot.ps1"
 
 ### Reenabling Critical Items
 
