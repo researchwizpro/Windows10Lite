@@ -57,14 +57,14 @@ function executeScript {
 # Execute Scripts from Windows10Lite/scripts
 # executeScript "DisableSystemFunctions.ps1";
 executeScript "RemoveApps.ps1";
-executeScript "InstallNewApps.ps1";
+# executeScript "InstallNewApps.ps1";
 executeScript "RemoveUtilities.ps1";
 executeScript "InstallNewUtilities.ps1";
 executeScript "InstallExtensions.ps1";
 # executeScript "CustomizeStartMenu.ps1";
-executeScript "CustomizeTaskbar.ps1";
+# executeScript "CustomizeTaskbar.ps1";
 # executeScript "CustomizeFileExplorer.ps1";
-executeScript "CustomizeDesktop.ps1";
+# executeScript "CustomizeDesktop.ps1";
 # executeScript "CustomizeSettings.ps1";
 # executeScript "CustomizeChrome.ps1";
 # executeScript "EnableSystemFunctions.ps1";

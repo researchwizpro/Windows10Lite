@@ -1,3 +1,5 @@
 choco install -y edgedeflector
 
-choco install -y chrometana-chrome
+Start-Program edgedeflector.exe
+
+# choco install -y chrometana-chrome
