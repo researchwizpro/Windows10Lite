@@ -1,0 +1,1 @@
+choco install -y desktopicons-winconfig --params "'Allcons:NO'"

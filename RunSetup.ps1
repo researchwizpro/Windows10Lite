@@ -1,4 +1,3 @@
-# Description: Boxstarter Script
 # Author: WillTee
 # Lightweight Windows 10 Pro Setup Script
 
@@ -6,11 +5,7 @@
 
 ### Starting with fresh image of Windows 10 Pro ###
 
-
 # Disable-UAC
-#   UiPath Robot
-
-# Enable AutoLogon
 #   UiPath Robot
 
 # Open Microsoftedge
@@ -34,16 +29,10 @@
 # ensure installing powershell modules don't prompt on needed dependencies
 $ConfirmPreference = "None"
 
-
-# *** NEED TO TEST IF NEEDED *** #
-# Temporarily Bypass Execution Policy
-# *** NEED TO TEST IF NEEDED *** #
-
-
-# Close Edge Browswer
+# Close Edge Browser
 Stop-Process -Name "Microsoftedge"
 
-# Get Base URI Path From ScriptToCall Value
+# Grab Base Package Script From Github
 $bstrappackage = "-bootstrapPackage"
 $helperUri = $Boxstarter['ScriptToCall']
 $strpos = $helperUri.IndexOf($bstrappackage)
@@ -66,22 +55,22 @@ function executeScript {
 }
 
 # Execute Scripts from Windows10Lite/scripts
-executeScript "TurnOffWindowsHello.ps1"
-#executeScript "RemoveDefaultApps.ps1";
-executeScript "InstallApps.ps1";
-#executeScript "RemovePinnedTaskbar.ps1";
-
-# executeScript "RemovePinnedStartMenu.ps1";
-# executeScript "SystemConfiguration.ps1";
-# executeScript "FileExplorerSettings.ps1";
-# executeScript "CommonDevTools.ps1";
-
-
-### Reenabling Critical Items
-
+# executeScript "DisableSystemFunctions.ps1";
+executeScript "RemoveApps.ps1";
+executeScript "InstallNewApps.ps1";
+executeScript "RemoveUtilities.ps1";
+executeScript "InstallNewUtilities.ps1";
+executeScript "InstallExtensions.ps1";
+# executeScript "CustomizeStartMenu.ps1";
+executeScript "CustomizeTaskbar.ps1";
+# executeScript "CustomizeFileExplorer.ps1";
+executeScript "CustomizeDesktop.ps1";
+# executeScript "CustomizeSettings.ps1";
+# executeScript "CustomizeChrome.ps1";
+# executeScript "EnableSystemFunctions.ps1";
 
 # Refresh Powershell and Registry Keys
-# refreshEnv
+refreshEnv
 
 
 

@@ -1,0 +1,1 @@
+choco install -y taskbar-winconfig --params "'/AUTOTRAY:no /COMBINED:yes /CORTANA:no /INK:no /LOCATION:top /LOCKED:yes /PEOPLE:no /SIZE:small /STORE:no /TASKVIEW:yes /KEYBOARD:no'"
