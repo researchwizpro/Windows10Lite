@@ -4,4 +4,3 @@ choco install -y boxstarter.winconfig
 
 choco install -y disablewintracking
 
-Start-Process disablewintracking.exe

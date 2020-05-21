@@ -55,12 +55,18 @@ function executeScript {
 }
 
 # Execute Scripts from Windows10Lite/scripts
+
+choco install -y hackfont-windows
+choco install -y boxstarter.winconfig
+choco install -y disablewintracking
+choco install -y disabledefender-winconfig
+
 # executeScript "DisableSystemFunctions.ps1";
-executeScript "RemoveApps.ps1";
+# executeScript "RemoveApps.ps1";
 # executeScript "InstallNewApps.ps1";
-executeScript "RemoveUtilities.ps1";
-executeScript "InstallNewUtilities.ps1";
-executeScript "InstallExtensions.ps1";
+# executeScript "RemoveUtilities.ps1";
+# executeScript "InstallNewUtilities.ps1";
+# executeScript "InstallExtensions.ps1";
 # executeScript "CustomizeStartMenu.ps1";
 # executeScript "CustomizeTaskbar.ps1";
 # executeScript "CustomizeFileExplorer.ps1";
@@ -69,9 +75,13 @@ executeScript "InstallExtensions.ps1";
 # executeScript "CustomizeChrome.ps1";
 # executeScript "EnableSystemFunctions.ps1";
 
+# Close Edge Browser
+Stop-Process -Name "Microsoftedge"
+
 # Refresh Powershell and Registry Keys
 refreshEnv
 
+Start-Process -Name "disablewintracking"
 
 
 ### END ###
