@@ -77,9 +77,11 @@ choco install -y disabledefender-winconfig
 
 
 # Refresh Powershell and Registry Keys
+
+
+# Start-Process disablewintracking.exe
+
+
 refreshEnv
-
-Start-Process disablewintracking.exe
-
 
 ### END ###
