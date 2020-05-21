@@ -75,8 +75,6 @@ choco install -y disabledefender-winconfig
 # executeScript "CustomizeChrome.ps1";
 # executeScript "EnableSystemFunctions.ps1";
 
-# Close Edge Browser
-Stop-Process -Name "Microsoftedge"
 
 # Refresh Powershell and Registry Keys
 refreshEnv
