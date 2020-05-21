@@ -8,7 +8,7 @@
 # Disable-UAC
 #   UiPath Robot
 
-# Open Microsoftedge
+# Open Microsoftedg
 #   UiPath Robot
 
 # Click in URL bar
